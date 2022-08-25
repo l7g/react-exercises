@@ -1,5 +1,5 @@
 import reactDom from "react-dom";
-import { Hello } from "./Hello";
+import { App } from "./App";
 const root = document.querySelector('#root');
 
-reactDom.render(<Hello/>, root);
+reactDom.render(<App/>, root);

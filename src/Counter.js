@@ -11,10 +11,10 @@ export class Counter extends React.Component {
         setInterval(() => {
             this.setState((state) => {
                 return {
-                    count: state.count + 1
+                    count: state.count + this.props.incrementBy
                 }
             })
-        }, 1000)
+        }, this.props.intervalValue)
     } 
 
     render() {
@@ -22,4 +22,9 @@ export class Counter extends React.Component {
             <h3>Count: {this.state.count}</h3>
         </div>
     }
+}
+
+Counter.defaultProps = {
+    incrementBy: 1,
+    intervalValue: 1000
 }

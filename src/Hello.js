@@ -1,7 +1,12 @@
 import React from 'react';
+import { Message } from './message';
 
 export class Hello extends React.Component{
     render() {
-        return <h1>Hello, World!</h1>
+        return (
+            <h1>Hello, World!
+            < Message/>
+            </h1>
+        )
     }
 }

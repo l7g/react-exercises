@@ -12,7 +12,6 @@ export class ClickCounter extends React.Component {
     }
 
     counterIncrement = (event) => {
-        console.log(event)
         this.setState((state) => {
             return {
                 count: state.count + this.props.incrementBy

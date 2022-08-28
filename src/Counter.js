@@ -6,12 +6,19 @@ class CounterDisplay extends React.Component {
     }
 }
 
+export class CounterButton extends React.Component {
+    render() {
+        return <button>Increment</button>
+    }
+}
+
 export class ClickCounter extends React.Component {
     state = {
         count: 0
     }
 
-    counterIncrement = () => {
+    counterIncrement = (event) => {
+        console.log(event);
         this.setState((state) => {
             return {
                 count: state.count + this.props.incrementBy
@@ -49,7 +56,8 @@ export class Counter extends React.Component {
   render() {
     return (
       <div>
-        <h3>Count: {<CounterDisplay value={this.state.count}/>}</h3>
+        <h3>Count:</h3>
+        <CounterDisplay value={this.state.count}/>
         <ClickCounter/>
       </div>
     );

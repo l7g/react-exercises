@@ -1,6 +1,7 @@
 import { Hello } from "./Hello";
 import React from "react";
-import { InteractiveWelcome } from "./InteractiveWelcome";
+//import { InteractiveWelcome } from "./InteractiveWelcome";
+import { Login } from "./Login";
 //import { Message } from "./message";
 //import { Welcome } from "./Welcome";
 //import { Counter } from "./Counter";
@@ -11,8 +12,9 @@ export class App extends React.Component{
         return (
             <div>
                 <Hello/>
-                <InteractiveWelcome/>
+                <Login/>
                 {/* <Message/>
+                <InteractiveWelcome/>
                 <Counter/>
                 <ClickTracker/>
                 <Welcome name={<strong>Laurent</strong>} age='20'/> */}

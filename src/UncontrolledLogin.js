@@ -11,11 +11,15 @@ export class UncontrolledLogin extends React.Component {
     console.log({ username, password, remember });
   };
 
+  componentDidMount(){
+    this.nameInput.focus();
+  }
+
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input name="username" />
+          <input ref={(input) => { this.nameInput = input; }} name="username"/>
           <input name="password" type="password" />
           <input name="remember" type="checkbox" />
           <button type="submit">Submit</button>

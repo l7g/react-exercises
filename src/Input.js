@@ -6,7 +6,7 @@ export class Input extends React.Component {
   };
 
   cleanInput = () => {
-    setInterval(() => {
+    setTimeout(() => {
       this.setState((state) => {
         return {
           value: "",

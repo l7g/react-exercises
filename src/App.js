@@ -10,14 +10,16 @@ import { ToDoList } from "./ToDoList";
 //import { Counter } from "./Counter";
 //import { ClickTracker } from "./ClickTracker";
 
-export class App extends React.Component{
-    render() {
-        return (
-            <div>
-                <Hello/>
-                <ToDoList/>
-                
-                {/* <Message/>
+export class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <React.StrictMode>
+          <Hello />
+          <ToDoList />
+        </React.StrictMode>
+
+        {/* <Message/>
                 <InteractiveWelcome/>
                 <Login/>
                 <Color/>
@@ -25,7 +27,7 @@ export class App extends React.Component{
                 <Counter/>
                 <ClickTracker/>
                 <Welcome name={<strong>Laurent</strong>} age='20'/> */}
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 }

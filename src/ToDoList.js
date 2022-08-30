@@ -18,7 +18,13 @@ export class ToDoList extends React.Component {
     console.log(event.target.elements)
   }
 
-  
+  clearList = () => {
+    this.setState((state) => {
+      return {
+        items: [],
+      }
+    })
+  }
 
   render() {
       let def = this.state.items.map((item) => <li>{item}</li>)
@@ -26,6 +32,7 @@ export class ToDoList extends React.Component {
       <div>
         <form onSubmit={this.handleToDoSub}>
           <Input/>
+          <button onClick={this.clearList} type='button'>Reset</button>
         </form>
 
         <div>

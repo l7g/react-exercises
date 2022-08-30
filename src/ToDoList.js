@@ -1,4 +1,5 @@
 import React from "react";
+import { Input } from "./Input";
 
 export class ToDoList extends React.Component {
   state = {
@@ -7,24 +8,24 @@ export class ToDoList extends React.Component {
 
   handleToDoSub = (event) => {
     event.preventDefault();
-    const title = event.target.elements.username.value;
-    
+    let title = event.target.elements.username.value;
     this.setState((state) => {
         this.state.items.push(title);
         return {
-            items: state.item
+            items: state.items
         }
-    })
-    
+    });
+    console.log(event.target.elements)
   }
 
+  
+
   render() {
-    let def = this.state.items.map((item) => <li>{item}</li>)
+      let def = this.state.items.map((item) => <li>{item}</li>)
     return (
       <div>
         <form onSubmit={this.handleToDoSub}>
-          <input name='username' type="text" />
-          <button>Submit</button>
+          <Input/>
         </form>
 
         <div>

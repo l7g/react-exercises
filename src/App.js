@@ -6,7 +6,8 @@ import { Login } from "./Login";
 //import { UncontrolledLogin } from "./UncontrolledLogin";
 //import { Color } from "./ColorsList";
 //import { Message } from "./message";
-import { Welcome } from "./Welcome";
+//import { Welcome } from "./Welcome";
+import { Container } from "./Container";
 //import { Counter } from "./Counter";
 //import { ClickTracker } from "./ClickTracker";
 
@@ -15,14 +16,15 @@ export class App extends React.Component {
     return (
       <div>
         <React.StrictMode>
-          <Hello />
-          <Welcome name={<strong>Laurent</strong>} age='20'/> 
-        <Login/>
+          <Container>
+            <Hello />
+            <Login />
+          </Container>
         </React.StrictMode>
 
         {/* <Message/>
                 <InteractiveWelcome/>
-                
+                <Welcome name={<strong>Laurent</strong>} age="20" />
                 <ToDoList />
                 <Color/>
                 <UncontrolledLogin/>

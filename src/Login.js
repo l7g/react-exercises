@@ -32,7 +32,7 @@ export class Login extends React.Component {
 
     render() {
         const buttonStyle = {
-            background: this.state.password.length < 8 ? 'red' : 'white',
+            background: this.state.password.length < 8 ? 'red' : 'green',
         }
         return (
              <div>

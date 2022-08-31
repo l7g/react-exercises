@@ -1,3 +1,4 @@
+import { BubbleController } from "chart.js";
 import React from "react";
 
 class CounterDisplay extends React.Component {
@@ -52,11 +53,16 @@ export class Counter extends React.Component {
     }, this.props.intervalValue);
   }
 
+  
+
   render() {
+    const counterStyle = {
+    color: this.state.count > 10 ? 'green' : 'blue',
+  }
     return (
-      <div>
+      <div style={counterStyle}>
         <h3>Count:</h3>
-        <CounterDisplay value={this.state.count}/>
+        <CounterDisplay  value={this.state.count}/>
         <ClickCounter/>
       </div>
     );

@@ -2,7 +2,7 @@ import { Hello } from "./Hello";
 import React from "react";
 //import { ToDoList } from "./ToDoList";
 //import { InteractiveWelcome } from "./InteractiveWelcome";
-//import { Login } from "./Login";
+import { Login } from "./Login";
 //import { UncontrolledLogin } from "./UncontrolledLogin";
 //import { Color } from "./ColorsList";
 //import { Message } from "./message";
@@ -17,12 +17,12 @@ export class App extends React.Component {
         <React.StrictMode>
           <Hello />
           <Welcome name={<strong>Laurent</strong>} age='20'/> 
-
+        <Login/>
         </React.StrictMode>
 
         {/* <Message/>
                 <InteractiveWelcome/>
-                <Login/>
+                
                 <ToDoList />
                 <Color/>
                 <UncontrolledLogin/>

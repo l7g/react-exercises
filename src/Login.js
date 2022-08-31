@@ -31,13 +31,16 @@ export class Login extends React.Component {
     }
 
     render() {
+        const buttonStyle = {
+            background: this.state.password.length < 8 ? 'red' : 'white',
+        }
         return (
              <div>
                 <h3>Login</h3>
                 <input name="username" type="text" value={this.state.username} onChange={this.handleInput}/>
                 <input name="password" type="password" value={this.state.password} onChange={this.handleInput}/>
                 <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInput}/>
-                {this.state.username !== '' && this.state.password !== '' ? <button onClick={this.onLogin}>Login</button> : <button disabled>Login</button>}
+                {this.state.username !== '' && this.state.password !== '' ? <button style={buttonStyle} onClick={this.onLogin}>Login</button> : <button disabled>Login</button>}
                 {this.state.username !== '' && this.state.password !== '' ? <button onClick={this.onReset}>Reset</button> : <button disabled>Reset</button>}
              </div>
         );

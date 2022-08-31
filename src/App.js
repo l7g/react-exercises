@@ -16,7 +16,7 @@ export class App extends React.Component {
     return (
       <div>
         <React.StrictMode>
-          <Container>
+          <Container title='My App'>
             <Hello />
             <Login />
           </Container>

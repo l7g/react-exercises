@@ -6,7 +6,7 @@ export class ClickTracker extends React.Component {
     }
 
     trackLast = (event) => {
-        this.setState((state) => {
+        this.setState(() => {
             return {
                 track: event.target.innerText
             }

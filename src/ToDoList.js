@@ -8,6 +8,7 @@ export class ToDoList extends React.Component {
       { key: "2", task: "Pet the dog" },
       { key: "3", task: "Picchia dani" },
     ],
+   
   };
 
   handleToDoSub = (event) => {

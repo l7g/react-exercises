@@ -1,8 +1,8 @@
 import { Hello } from "./Hello";
 import React from "react";
-//import { ToDoList } from "./ToDoList";
+import { ToDoList } from "./ToDoList";
 //import { InteractiveWelcome } from "./InteractiveWelcome";
-import { Login } from "./Login";
+//import { Login } from "./Login";
 //import { UncontrolledLogin } from "./UncontrolledLogin";
 //import { Color } from "./ColorsList";
 //import { Message } from "./message";
@@ -16,9 +16,9 @@ export class App extends React.Component {
     return (
       <div>
         <React.StrictMode>
-          <Container title='My App'>
+          <Container title="My App">
+            <ToDoList></ToDoList>
             <Hello />
-            <Login />
           </Container>
         </React.StrictMode>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "./Input";
-import { ListItem } from "./ListItem";
+import { List } from "./List";
 
 export class ToDoList extends React.Component {
   state = {
@@ -47,14 +47,6 @@ export class ToDoList extends React.Component {
   };
 
   render() {
-    let def = this.state.items.map((item) => {
-      return (
-        <div>
-          <ListItem render={() => {}}></ListItem>
-          <button id={item.key} onClick={this.deleteItem} type="button">Delete</button>
-        </div>
-      );
-    });
     return (
       <div>
         <form onSubmit={this.handleToDoSub}>
@@ -65,9 +57,17 @@ export class ToDoList extends React.Component {
         </form>
 
         <div>
-          <ul>
-            
-          </ul>
+        <List render={(items) => { 
+          this.state.items.map((item) => {
+            return (
+              <div>
+                List(items)
+                <button id={item.key} onClick={this.deleteItem} type="button">Delete</button>
+              </div>
+            );
+          });
+          
+        }}></List>
         </div>
       </div>
     );

@@ -17,7 +17,7 @@ export class App extends React.Component {
       <div>
         <React.StrictMode>
           <Container title="My App">
-            <ToDoList></ToDoList>
+            <ToDoList/>
             <Hello />
           </Container>
         </React.StrictMode>

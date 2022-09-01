@@ -1,5 +1,6 @@
 import React from "react";
 import { Input } from "./Input";
+import { ListItem } from "./ListItem";
 
 export class ToDoList extends React.Component {
   state = {
@@ -49,7 +50,7 @@ export class ToDoList extends React.Component {
     let def = this.state.items.map((item) => {
       return (
         <div>
-          <li>{item.task}</li>
+          <ListItem render={() => {}}></ListItem>
           <button id={item.key} onClick={this.deleteItem} type="button">Delete</button>
         </div>
       );
@@ -64,7 +65,9 @@ export class ToDoList extends React.Component {
         </form>
 
         <div>
-          <ul>{def}</ul>
+          <ul>
+            
+          </ul>
         </div>
       </div>
     );

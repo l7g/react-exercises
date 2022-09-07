@@ -1,30 +1,49 @@
 import { Hello } from "./Hello";
 import React from "react";
-import { ToDoList } from "./ToDoList";
+//import { ToDoList } from "./ToDoList";
 //import { InteractiveWelcome } from "./InteractiveWelcome";
 //import { Login } from "./Login";
 //import { UncontrolledLogin } from "./UncontrolledLogin";
 //import { Color } from "./ColorsList";
 //import { Message } from "./message";
-//import { Welcome } from "./Welcome";
+import { Welcome } from "./Welcome";
 import { Container } from "./Container";
+import { LanguageContext } from "./LanguageContext";
 //import { Counter } from "./Counter";
 //import { ClickTracker } from "./ClickTracker";
 
 export class App extends React.Component {
+  state = {
+    language: "en",
+  };
+
+  handleLanguageChange = (event) => {
+    this.setState(() => {
+      return {
+        language: event.target.value,
+      };
+    });
+  };
   render() {
     return (
       <div>
         <React.StrictMode>
-          <Container title="My App">
-            <ToDoList render={(state, fn) => state.items.map((item) => 
-              <div>
-                <li key={item.key}>{item.task}</li>
-                <button onClick={fn}>Delete</button>
-              </div>
-            )}/>
-            <Hello />
-          </Container>
+          <div className="language-picker">
+            <select
+              value={this.state.language}
+              onChange={this.handleLanguageChange}
+            >
+              <option value="en">ENGLISH</option>
+              <option value="it">ITALIANO</option>
+            </select>
+          </div>
+
+          <LanguageContext.Provider value={this.state.language}>
+            <Container title="My App">
+              <Hello />
+              <Welcome name='Laurent'/>
+            </Container>
+          </LanguageContext.Provider>
         </React.StrictMode>
 
         {/* <Message/>

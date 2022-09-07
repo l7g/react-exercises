@@ -6,7 +6,7 @@ const Languages = {
 }
 
 
-export function Sum({from = [1, 2, 3]}){
+export function Sum({from = [1, 2, 3, 4]}){
     return (
         <div>
             <LanguageContext.Consumer>

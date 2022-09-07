@@ -46,7 +46,7 @@ export class App extends React.Component {
             <Container title="My App">
               <DisplayLanguage />
               <Welcome name="Laurent" />
-              <Sum from={Numbers}/>
+              <Sum/>
             </Container>
           </LanguageContext.Provider>
         </React.StrictMode>

@@ -4,12 +4,12 @@ import { List } from "./List";
 
 export class ToDoList extends React.Component {
   state = {
+    keys: ['01'],
     items: [
       { key: "1", task: "Buy food" },
       { key: "2", task: "Pet the dog" },
       { key: "3", task: "Picchia dani" },
     ],
-   
   };
 
   handleToDoSub = (event) => {
@@ -19,11 +19,11 @@ export class ToDoList extends React.Component {
     let obj = { key: `${key}`, task: title };
     this.state.items.push(obj);
     this.setState((state) => {
-      this.state.items.forEach(item => {
-        item.key = `${this.state.items.indexOf(item) + 1}`
-      })
+      this.state.items.forEach((item) => {
+        item.key = `${this.state.items.indexOf(item) + 1}`;
+      });
       return {
-        items: state.items
+        items: state.items,
       };
     });
   };
@@ -36,19 +36,31 @@ export class ToDoList extends React.Component {
     });
   };
 
-  deleteItem = (event) => {
-    let key = event.target.id;
+  /* deleteItem = (event) => {
+    let key = event.target.key;
+    console.log('clicked')
     this.setState(() => {
-      let newItems = this.state.items.filter(item => item.key !== key)
+      let newItems = [...this.state.items].filter(item => item.key !== key)
       return {
         items: newItems
       };
     });
-  };
+  }; */
+
+  deleteItem = (event) => this.setState((state) => {
+    const items = [...state.items];
+    items.splice(event.target.value, 1);
+    return {
+      items: items
+    };
+  })
 
   render() {
+
     return (
-      <div>
+      
+      <div key={this.state.keys[0]}>
+        {/* <div>
         <form onSubmit={this.handleToDoSub}>
           <Input />
           <button onClick={this.clearList} type="button">
@@ -57,18 +69,39 @@ export class ToDoList extends React.Component {
         </form>
 
         <div>
-        <List render={(items) => { 
-          this.state.items.map((item) => {
-            return (
-              <div>
-                List(items)
-                <button id={item.key} onClick={this.deleteItem} type="button">Delete</button>
-              </div>
-            );
-          });
-          
-        }}></List>
+          <List
+            list={this.state.items}
+            render={({items, deleteItem}) => {
+              
+              return (
+                <ul>
+                  {items.map((item) => {
+                    return (
+                      <div>
+                        <li key={item.key}>{item.task}</li>
+                        <button
+                          id={item.key}
+                          type="button"
+                          onClick={deleteItem}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    );
+                  })}
+                </ul>
+              );
+            }}
+          ></List>
         </div>
+      </div> */}
+        <ul>
+          {this.props.render(this.state, this.deleteItem)}
+        </ul>
+        <form onSubmit={this.handleToDoSub}>
+            <Input/>
+            <button onClick={this.clearList} type="button">Clear</button>
+        </form>
       </div>
     );
   }

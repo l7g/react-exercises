@@ -17,7 +17,12 @@ export class App extends React.Component {
       <div>
         <React.StrictMode>
           <Container title="My App">
-            <ToDoList/>
+            <ToDoList render={(state, fn) => state.items.map((item) => 
+              <div>
+                <li key={item.key}>{item.task}</li>
+                <button onClick={fn}>Delete</button>
+              </div>
+            )}/>
             <Hello />
           </Container>
         </React.StrictMode>

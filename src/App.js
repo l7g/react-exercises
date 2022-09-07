@@ -10,8 +10,11 @@ import { Welcome } from "./Welcome";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 //import { Counter } from "./Counter";
 //import { ClickTracker } from "./ClickTracker";
+
+const Numbers = [6, 90, 48, 63, 12]
 
 export class App extends React.Component {
   state = {
@@ -42,8 +45,8 @@ export class App extends React.Component {
           <LanguageContext.Provider value={this.state.language}>
             <Container title="My App">
               <DisplayLanguage />
-              <Hello />
               <Welcome name="Laurent" />
+              <Sum from={Numbers}/>
             </Container>
           </LanguageContext.Provider>
         </React.StrictMode>

@@ -2,9 +2,9 @@ import React from "react";
 import { LanguageContext } from "./LanguageContext";
 
 const Welcomes = {
-    en: {CURRENT_LANGUAGE: 'Welcome'},
-    it: {CURRENT_LANGUAGE: 'Benvenuto'}
-}
+  en: { CURRENT_LANGUAGE: "Welcome" },
+  it: { CURRENT_LANGUAGE: "Benvenuto" },
+};
 
 export class Welcome extends React.Component {
   render() {
@@ -12,7 +12,11 @@ export class Welcome extends React.Component {
       <div className="welcome">
         <LanguageContext.Consumer>
           {(Language) => {
-            return <p>{Welcomes[Language].CURRENT_LANGUAGE}, {this.props.name}</p>;
+            return (
+              <p>
+                {Welcomes[Language].CURRENT_LANGUAGE}, {this.props.name}
+              </p>
+            );
           }}
         </LanguageContext.Consumer>
       </div>

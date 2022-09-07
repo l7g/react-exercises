@@ -9,6 +9,7 @@ import React from "react";
 import { Welcome } from "./Welcome";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
+import { DisplayLanguage } from "./DisplayLanguage";
 //import { Counter } from "./Counter";
 //import { ClickTracker } from "./ClickTracker";
 
@@ -40,8 +41,9 @@ export class App extends React.Component {
 
           <LanguageContext.Provider value={this.state.language}>
             <Container title="My App">
+              <DisplayLanguage />
               <Hello />
-              <Welcome name='Laurent'/>
+              <Welcome name="Laurent" />
             </Container>
           </LanguageContext.Provider>
         </React.StrictMode>

@@ -6,7 +6,23 @@ const Welcomes = {
   it: { CURRENT_LANGUAGE: "Benvenuto" },
 };
 
-export class Welcome extends React.Component {
+export function Welcome({name}) {
+  return (
+    <div>
+      <LanguageContext.Consumer>
+        {(Language) => {
+          return (
+            <p>
+              {Welcomes[Language].CURRENT_LANGUAGE}, {name}
+            </p>
+          );
+        }}
+      </LanguageContext.Consumer>
+    </div>
+  );
+}
+
+/* export class Welcome extends React.Component {
   render() {
     return (
       <div className="welcome">
@@ -26,4 +42,4 @@ export class Welcome extends React.Component {
 
 Welcome.defaultProps = {
   name: "John",
-};
+}; */

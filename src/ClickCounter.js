@@ -1,30 +1,29 @@
-import React from "react"
+import React, { useState } from "react";
+import { LanguageContext } from "./LanguageContext";
 
-export class CounterButton extends React.Component {
-    render() {
-        return <button>Increment</button>
-    }
-}
+const Languages = {
+  en: { CURRENT_TRACKER: "Click count", CURRENT_BUTTON: "Increment" },
+  it: { CURRENT_TRACKER: "Conteggio click", CURRENT_BUTTON: "Incrementa" },
+};
+export function ClickCounter({ initialValue = 0 }) {
+  const [count, setCount] = useState(initialValue);
 
-export class ClickCounter extends React.Component {
-    state = {
-        count: 0
-    }
+  function counterIncrement() {
+    setCount((count) => count + 1);
+  }
 
-    counterIncrement = (event) => {
-        this.setState((state) => {
-            return {
-                count: state.count + this.props.incrementBy
-            }
-        })
-    }
-
-    render(){
-        return (
+  return (
+    <div>
+      <LanguageContext.Consumer>
+        {(Language) => {
+          return (
             <div>
-                <button onClick={this.counterIncrement}>Increment</button>
-                <h3>Click count: {this.state.count}</h3>
+              <h3>{Languages[Language].CURRENT_TRACKER}: {count}</h3>
+              <button onClick={counterIncrement}>{Languages[Language].CURRENT_BUTTON}</button>
             </div>
-        )
-    }
+          );
+        }}
+      </LanguageContext.Consumer>
+    </div>
+  );
 }

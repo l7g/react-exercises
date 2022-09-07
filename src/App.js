@@ -9,12 +9,14 @@ import React from "react";
 import { Welcome } from "./Welcome";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
-import { DisplayLanguage } from "./DisplayLanguage";
-import { Sum } from "./Sum";
+import { ClickCounter } from "./ClickCounter";
+//import { DisplayLanguage } from "./DisplayLanguage";
+//import { Sum } from "./Sum";
 //import { Counter } from "./Counter";
 //import { ClickTracker } from "./ClickTracker";
 
-const Numbers = [6, 90, 48, 63, 12]
+
+//const Numbers = [6, 90, 48, 63, 12]
 
 export class App extends React.Component {
   state = {
@@ -44,9 +46,8 @@ export class App extends React.Component {
 
           <LanguageContext.Provider value={this.state.language}>
             <Container title="My App">
-              <DisplayLanguage />
               <Welcome name="Laurent" />
-              <Sum/>
+              <ClickCounter/>
             </Container>
           </LanguageContext.Provider>
         </React.StrictMode>

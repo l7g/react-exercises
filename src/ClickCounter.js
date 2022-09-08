@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LanguageContext } from "./LanguageContext";
 
 const Languages = {
@@ -6,11 +6,18 @@ const Languages = {
   it: { CURRENT_TRACKER: "Conteggio click", CURRENT_BUTTON: "Incrementa" },
 };
 export function ClickCounter({ initialValue = 0 }) {
-  const [count, setCount] = useState(initialValue);
+  const [count, setCount] = useState(initialValue); 
+  
+  useEffect(() => {onCounterChange(count)}, [count]);
 
   function counterIncrement() {
     setCount((count) => count + 1);
   }
+
+  function onCounterChange(c){
+    console.log(c);
+  }
+ 
 
   return (
     <div>

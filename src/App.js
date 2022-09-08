@@ -2,14 +2,14 @@
 import React from "react";
 //import { ToDoList } from "./ToDoList";
 //import { InteractiveWelcome } from "./InteractiveWelcome";
-import { Login } from "./Login";
+//import { Login } from "./Login";
 //import { UncontrolledLogin } from "./UncontrolledLogin";
 //import { Color } from "./ColorsList";
 //import { Message } from "./message";
 import { Welcome } from "./Welcome";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
-//import { ClickCounter } from "./ClickCounter";
+import { ClickCounter } from "./ClickCounter";
 //import { DisplayLanguage } from "./DisplayLanguage";
 //import { Sum } from "./Sum";
 //import { Counter } from "./Counter";
@@ -47,7 +47,7 @@ export class App extends React.Component {
           <LanguageContext.Provider value={this.state.language}>
             <Container title="My App">
               <Welcome name="Laurent" />
-              <Login/>
+              <ClickCounter/>
             </Container>
           </LanguageContext.Provider>
         </React.StrictMode>

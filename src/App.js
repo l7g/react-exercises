@@ -12,7 +12,8 @@ import { LanguageContext } from "./LanguageContext";
 //import { ClickCounter } from "./ClickCounter";
 //import { DisplayLanguage } from "./DisplayLanguage";
 //import { Sum } from "./Sum";
-import { Counter } from "./Counter";
+//import { Counter } from "./Counter";
+import { GithubUser } from "./GithubUser";
 //import { ClickTracker } from "./ClickTracker";
 
 //const Numbers = [6, 90, 48, 63, 12]
@@ -44,8 +45,7 @@ export function App({ initialLanguage = "en" }) {
         <LanguageContext.Provider value={language}>
           <Container title="My App">
             <Welcome name="Laurent" />
-            <button onClick={handleToggle}>Toggle</button>
-            {showCounter && <Counter />}
+            <GithubUser username='l7g'/>
           </Container>
         </LanguageContext.Provider>
       </React.StrictMode>

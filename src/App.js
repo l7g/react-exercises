@@ -14,6 +14,7 @@ import { LanguageContext } from "./LanguageContext";
 //import { Sum } from "./Sum";
 //import { Counter } from "./Counter";
 import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 //import { ClickTracker } from "./ClickTracker";
 
 //const Numbers = [6, 90, 48, 63, 12]
@@ -22,21 +23,21 @@ export function App({ initialLanguage = "en" }) {
   const [language, setLanguage] = useState(initialLanguage);
   const [showCounter, setShowCounter] = useState(false);
 
+
   function handleToggle() {
-    setShowCounter((s) => !s)
+    setShowCounter((s) => !s);
   }
 
+  
+
   function handleLanguageChange(event) {
-    setLanguage((l) => l = event.target.value);
+    setLanguage((l) => (l = event.target.value));
   }
   return (
     <div>
       <React.StrictMode>
         <div className="language-picker">
-          <select
-            value={language}
-            onChange={handleLanguageChange}
-          >
+          <select value={language} onChange={handleLanguageChange}>
             <option value="en">ENGLISH</option>
             <option value="it">ITALIANO</option>
           </select>
@@ -45,7 +46,7 @@ export function App({ initialLanguage = "en" }) {
         <LanguageContext.Provider value={language}>
           <Container title="My App">
             <Welcome name="Laurent" />
-            <GithubUser username='l7g'/>
+            <GithubUserList/>
           </Container>
         </LanguageContext.Provider>
       </React.StrictMode>

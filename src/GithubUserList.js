@@ -10,11 +10,6 @@ export function GithubUserList({ from = ["l7g"] }) {
     const newUsernames = [...usernames, value];
     setUsernames(newUsernames);
   }
-
-  useEffect(() => {
-    console.log(usernames);
-  }, [usernames]);
-
   return (
     <div>
       <form onSubmit={handleSubmit}>

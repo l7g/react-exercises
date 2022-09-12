@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useGithubUser } from "./useGithubUser";
 
 export function GithubUser({ username }) {
-  const {data, fetchUserData} = useGithubUser(username)
+  const {data, fetchUserData, error, loading} = useGithubUser(username)
 
   useEffect(() => {
     fetchUserData(username);
@@ -11,6 +11,8 @@ export function GithubUser({ username }) {
 
   return (
     <div>
+      {loading && <h1>Loading...</h1>}
+      {error && <h1>An error occured</h1>}
       {data && <h1>{data.name}</h1>}
       {data && <h3>Username: {data.login}</h3>}
       {data && <h5>Github link: <a href={data.html_url}>{data.html_url}</a></h5>}

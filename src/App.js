@@ -5,12 +5,14 @@ import { LanguageContext } from "./LanguageContext";
 import { ClickCounter } from "./ClickCounter";
 import { LoginCustomHook } from "./LoginCustomHook";
 import { GithubUserList } from "./GithubUserList";
+import { CurrentLocation } from "./CurrentLocation";
 
 //const Numbers = [6, 90, 48, 63, 12]
 
 export function App({ initialLanguage = "en" }) {
   const [language, setLanguage] = useState(initialLanguage);
   const [showCounter, setShowCounter] = useState(false);
+
 
   function handleToggle() {
     setShowCounter((s) => !s);
@@ -28,6 +30,7 @@ export function App({ initialLanguage = "en" }) {
             <option value="it">ITALIANO</option>
           </select>
         </div>
+        <CurrentLocation/>
 
         <LanguageContext.Provider value={language}>
           <Container title="My App">

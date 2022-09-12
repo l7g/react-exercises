@@ -3,6 +3,7 @@ import { Welcome } from "./Welcome";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { ClickCounter } from "./ClickCounter";
+import { LoginCustomHook } from "./LoginCustomHook";
 
 //const Numbers = [6, 90, 48, 63, 12]
 
@@ -30,7 +31,7 @@ export function App({ initialLanguage = "en" }) {
         <LanguageContext.Provider value={language}>
           <Container title="My App">
             <Welcome name="Laurent" />
-            <ClickCounter />
+            <LoginCustomHook/>
           </Container>
         </LanguageContext.Provider>
       </React.StrictMode>

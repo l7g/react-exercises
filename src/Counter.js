@@ -12,7 +12,7 @@ export class CounterButton extends React.Component {
   }
 }
 
-export class ClickCounter extends React.Component {
+export function ClickCounter(){
   state = {
     count: 0,
   };

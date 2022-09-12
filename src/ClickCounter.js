@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
 import { LanguageContext } from "./LanguageContext";
+import { useCounter } from "./useCounter";
 
 const Languages = {
-  en: { CURRENT_TRACKER: "Click count", CURRENT_BUTTON: "Increment" },
-  it: { CURRENT_TRACKER: "Conteggio click", CURRENT_BUTTON: "Incrementa" },
+  en: {
+    CURRENT_TRACKER: "Click count",
+    CURRENT_INCREASE: "Increment",
+    CURRENT_DECREASE: "Decrease",
+  },
+  it: {
+    CURRENT_TRACKER: "Conteggio click",
+    CURRENT_INCREASE: "Incrementa",
+    CURRENT_DECREASE: "Diminuisci",
+  },
 };
+
 export function ClickCounter({ initialValue = 0 }) {
-  const [count, setCount] = useState(initialValue); 
-  
-  useEffect(() => {onCounterChange(count)}, [count]);
-
-  function counterIncrement() {
-    setCount((count) => count + 1);
-  }
-
-  function onCounterChange(c){
-    console.log(c);
-  }
- 
+  const { count, counterIncrement, counterDecrement, counterReset } = useCounter(initialValue);
 
   return (
     <div>
@@ -25,8 +23,16 @@ export function ClickCounter({ initialValue = 0 }) {
         {(Language) => {
           return (
             <div>
-              <h3>{Languages[Language].CURRENT_TRACKER}: {count}</h3>
-              <button onClick={counterIncrement}>{Languages[Language].CURRENT_BUTTON}</button>
+              <h3>
+                {Languages[Language].CURRENT_TRACKER}: {count}
+              </h3>
+              <button onClick={counterIncrement}>
+                {Languages[Language].CURRENT_INCREASE}
+              </button>
+              <button onClick={counterDecrement}>
+                {Languages[Language].CURRENT_DECREASE}
+              </button>
+              <button onClick={counterReset}>Reset</button>
             </div>
           );
         }}

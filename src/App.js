@@ -35,7 +35,7 @@ export function App({ initialLanguage = "en" }) {
         <LanguageContext.Provider value={language}>
           <Container title="My App">
             <Welcome name="Laurent" />
-            <GithubUserList/>
+            <ClickCounter/>
           </Container>
         </LanguageContext.Provider>
       </React.StrictMode>

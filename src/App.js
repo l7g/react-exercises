@@ -6,6 +6,7 @@ import { ClickCounter } from "./ClickCounter";
 import { LoginCustomHook } from "./LoginCustomHook";
 import { GithubUserList } from "./GithubUserList";
 import { CurrentLocation } from "./CurrentLocation";
+import { Login } from './Login'
 
 //const Numbers = [6, 90, 48, 63, 12]
 
@@ -30,12 +31,11 @@ export function App({ initialLanguage = "en" }) {
             <option value="it">ITALIANO</option>
           </select>
         </div>
-        <CurrentLocation/>
 
         <LanguageContext.Provider value={language}>
           <Container title="My App">
             <Welcome name="Laurent" />
-            <ClickCounter/>
+            <Login/>
           </Container>
         </LanguageContext.Provider>
       </React.StrictMode>

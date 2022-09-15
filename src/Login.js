@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export function Login() {
   const [data, setData] = useState({
@@ -7,6 +7,13 @@ export function Login() {
     password: "",
     remember: false,
   });
+
+  const inputRef = useRef()
+
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [])
+  
   function handleInput(event){
     const {name, type, value, checked} = event.target;
 
@@ -37,6 +44,7 @@ export function Login() {
       <input
         name="username"
         type="text"
+        ref={inputRef}
         value={data.username}
         onChange={handleInput}
       />

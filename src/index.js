@@ -1,7 +1,7 @@
 import reactDom from "react-dom";
-import { App } from "./App";
 import './index.css';
+import { Root } from "./Root";
 const root = document.querySelector('#root');
 
 
-reactDom.render(<App/>, root);
+reactDom.render(<Root/>, root);

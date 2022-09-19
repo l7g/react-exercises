@@ -3,6 +3,7 @@ import { Welcome } from "./Welcome";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { Route, Routes } from "react-router-dom";
+import {ClickCounter} from './ClickCounter'
 
 //const Numbers = [6, 90, 48, 63, 12]
 
@@ -23,6 +24,7 @@ export function App({ initialLanguage = "en" }) {
       <Container>
       <Routes>
         <Route path="/" element={<Welcome name='Laurent'/>}/>
+        <Route path="counter" element={<ClickCounter />}/>
       </Routes>
       </Container>
     </div>
